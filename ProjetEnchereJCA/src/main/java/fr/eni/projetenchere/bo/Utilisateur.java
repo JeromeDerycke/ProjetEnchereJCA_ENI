@@ -9,7 +9,7 @@ public class Utilisateur implements Serializable {
 	private int noUtilisateur;
 	private String pseudo;
 	private String nom;
-	private String prenom;s
+	private String prenom;
 	private String email;
 	private String telephone;
 	private String rue;
