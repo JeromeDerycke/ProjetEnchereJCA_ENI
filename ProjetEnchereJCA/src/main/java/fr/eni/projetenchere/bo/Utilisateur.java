@@ -17,7 +17,7 @@ public class Utilisateur implements Serializable {
 	private String ville;
 	private String motDePasse;
 	private int credit;
-	private Boolean adminstrateur;
+	private Boolean administrateur;
 	
 	
 	public Utilisateur() {
@@ -41,7 +41,7 @@ public class Utilisateur implements Serializable {
 		this.ville = ville;
 		this.motDePasse = motDePasse;
 		this.credit = credit;
-		this.adminstrateur = adminstrateur;
+		this.administrateur = adminstrateur;
 	}
 
 
@@ -60,7 +60,7 @@ public class Utilisateur implements Serializable {
 		this.ville = ville;
 		this.motDePasse = motDePasse;
 		this.credit = credit;
-		this.adminstrateur = adminstrateur;
+		this.administrateur = adminstrateur;
 	}
 	
 	
@@ -153,12 +153,12 @@ public class Utilisateur implements Serializable {
 		this.credit = credit;
 	}
 
-	public Boolean getAdminstrateur() {
-		return adminstrateur;
+	public Boolean getAdministrateur() {
+		return administrateur;
 	}
 
-	public void setAdminstrateur(Boolean adminstrateur) {
-		this.adminstrateur = adminstrateur;
+	public void setAdministrateur(Boolean adminstrateur) {
+		this.administrateur = adminstrateur;
 	}
 
 
