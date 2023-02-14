@@ -1,14 +1,15 @@
-package fr.eni.enchere.bo;
+package fr.eni.projetenchere.bo;
 
 import java.io.Serializable;
 
 public class Utilisateur implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	private int noUtilisateur;
 	private String pseudo;
 	private String nom;
-	private String prenom;
+	private String prenom;s
 	private String email;
 	private String telephone;
 	private String rue;
@@ -160,11 +161,6 @@ public class Utilisateur implements Serializable {
 		this.adminstrateur = adminstrateur;
 	}
 
-
-
-	
-
-	
 
 
 }

@@ -1,4 +1,4 @@
-package fr.eni.enchere.bo;
+package fr.eni.projetenchere.bo;
 
 import java.io.Serializable;
 

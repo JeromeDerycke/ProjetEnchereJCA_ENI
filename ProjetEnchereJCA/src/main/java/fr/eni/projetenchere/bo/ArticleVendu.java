@@ -1,4 +1,4 @@
-package fr.eni.enchere.bo;
+package fr.eni.projetenchere.bo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -6,9 +6,10 @@ import java.time.LocalDate;
 public class ArticleVendu implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int noArticle;
+	
 	private Categorie noCategorie; 
 	private Utilisateur noUtilisateur;
+	private int noArticle;	
 	private String nomArticle;
 	private String description;
 	private LocalDate dateDebutEncheres;

@@ -1,4 +1,4 @@
-package fr.eni.enchere.bo;
+package fr.eni.projetenchere.bo;
 
 import java.io.Serializable;
 
@@ -14,7 +14,6 @@ public class Retrait implements Serializable {
 	public Retrait() {
 
 	}
-	
 	
 
 	public Retrait(ArticleVendu noArticle, String rue, String codePostal, String ville) {
