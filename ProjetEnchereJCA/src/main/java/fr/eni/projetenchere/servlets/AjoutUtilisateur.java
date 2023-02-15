@@ -16,16 +16,21 @@ import javax.servlet.http.HttpServletResponse;
 public class AjoutUtilisateur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	String bt=null;
     
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		RequestDispatcher rd = null;
+		RequestDispatcher rd=null;
+		
+		bt = request.getParameter("bt");
 		
 		
-		response.sendRedirect("webapp/TestUtilisateur.html");
+		
+		rd = request.getRequestDispatcher("/WEB-INF/AjoutUtilisateur.jsp");
+		rd.forward(request, response);
 		
 	}
 
@@ -36,6 +41,11 @@ public class AjoutUtilisateur extends HttpServlet {
 		
 		RequestDispatcher rd = null;
 		
+		if ( bt.equals("Annuler")) {
+			rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+			
+		} else if (bt.equals("Valider")) { 
+			
 		String email = request.getParameter("Email");
 		String mdp = request.getParameter("MotDePasse");
 		String nom = request.getParameter("Nom");
@@ -53,12 +63,16 @@ public class AjoutUtilisateur extends HttpServlet {
 		System.out.println(prenom);
 		System.out.println(pseudo);
 		System.out.println(telephone);
-		System.out.println(cdp);
+		System.out.println(rue);
 		System.out.println(ville);
 		System.out.println(cdp);
 		
-		rd = request.getRequestDispatcher("TestUtilisateur.html");
+		rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
 		rd.forward(request, response);
+			
+		}
+		
+		
 		
 	}
 
