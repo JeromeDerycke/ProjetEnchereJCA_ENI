@@ -57,8 +57,8 @@
           <input type="text" class="form-control" id="CodePostal" name="CodePostal">
         </div>        
         <div class="col">
-          <button  class="btn btn-primary" type="submit" name="bt" value="Annuler">Annuler</button>
-          <button  class="btn btn-primary" type="submit" name="bt" value="Valider">S'inscrire</button>
+          <button  class="btn btn-primary" type="submit" name="bt" value="annuler">Annuler</button>
+          <button  class="btn btn-primary" type="submit" name="bt" value="valider">S'inscrire</button>
         </div> 
   </form> </div>
   </div>

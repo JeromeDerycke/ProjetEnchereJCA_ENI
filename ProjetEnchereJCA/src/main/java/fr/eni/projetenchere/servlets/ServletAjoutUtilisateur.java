@@ -50,10 +50,10 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 		bt = request.getParameter("bt");
 		System.out.println(bt);
 
-		if (bt.equals("Annuler")) {
+		if (bt.equals("annuler")) {
 			rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
 
-		} else if (bt.equals("Valider")) {
+		} else if (bt.equals("valider")) {
 
 			String email = request.getParameter("Email");
 			String mdp = request.getParameter("MotDePasse");
