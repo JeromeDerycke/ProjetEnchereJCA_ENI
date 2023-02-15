@@ -34,8 +34,17 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 			pstmt.setBoolean(11, false);
 
 			ResultSet rs = pstmt.getGeneratedKeys();
+			if(rs.next())
+			{
+				utilisateur.setNoUtilisateur(rs.getInt(1));
+			}
 
+			rs.close();
+			pstmt.close();
+			cnx.commit();
 			System.out.println(utilisateur);
+			
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();

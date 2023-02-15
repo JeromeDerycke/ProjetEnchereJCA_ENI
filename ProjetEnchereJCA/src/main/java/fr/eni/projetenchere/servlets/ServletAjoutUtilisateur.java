@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.projetenchere.bll.UtilisateurManager;
+import fr.eni.projetenchere.bo.Utilisateur;
+
 /**
  * Servlet implementation class AjoutUtilisateur
  */
@@ -74,9 +77,17 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 			System.out.println(rue);
 			System.out.println(ville);
 			System.out.println(cdp);
+			
+			Utilisateur u = new Utilisateur(pseudo,nom,prenom,email,telephone,rue,cdp,ville,mdp);
+			UtilisateurManager um = new UtilisateurManager();
 
-			rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
-			rd.forward(request, response);
+				um.addUtilisateur(u);
+				request.setAttribute("utilisateur", u);
+				
+				rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+				rd.forward(request, response);
+		
+			
 
 		}
 
