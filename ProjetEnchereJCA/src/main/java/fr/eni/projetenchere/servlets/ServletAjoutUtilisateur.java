@@ -29,16 +29,8 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		bt = request.getParameter("bt");
-
-		if (bt.equals("inscription")) {
-
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/AjoutUtilisateur.jsp");
-			rd.forward(request, response);
-
-		} else {
-
-		}
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/AjoutUtilisateur.jsp");
+		rd.forward(request, response);
 
 	}
 
