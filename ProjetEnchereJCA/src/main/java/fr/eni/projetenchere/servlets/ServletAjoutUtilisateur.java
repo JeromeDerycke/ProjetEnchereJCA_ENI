@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.projetenchere.bll.BLLException;
+import fr.eni.projetenchere.bll.UtilisateurManager;
+import fr.eni.projetenchere.bo.Utilisateur;
+
 /**
  * Servlet implementation class AjoutUtilisateur
  */
@@ -25,15 +29,14 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		RequestDispatcher rd = null;
-		bt="";
-		System.out.println(bt);
 		bt = request.getParameter("bt");
-		
-		if ( bt.equals("inscription")) {
 
-			rd = request.getRequestDispatcher("/WEB-INF/AjoutUtilisateur.jsp");
+		if (bt.equals("inscription")) {
+
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/AjoutUtilisateur.jsp");
 			rd.forward(request, response);
+
+		} else {
 
 		}
 
@@ -46,12 +49,11 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		RequestDispatcher rd = null;
 		bt = request.getParameter("bt");
 		System.out.println(bt);
 
 		if (bt.equals("annuler")) {
-			rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
 
 		} else if (bt.equals("valider")) {
 
@@ -75,8 +77,29 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 			System.out.println(ville);
 			System.out.println(cdp);
 
-			rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+			Utilisateur u = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, cdp, ville, mdp);
+			UtilisateurManager um = new UtilisateurManager();
+
+//			try {
+
+			um.addUtilisateur(u);
+			request.setAttribute("retour", "Insertion reussi");
+			request.setAttribute("utilisateur", u);
+
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
 			rd.forward(request, response);
+
+//			} catch (BLLException e){
+//				
+//				request.setAttribute("retour", "insertion est un echec");
+//				request.setAttribute("utilisateur", u);
+//				request.setAttribute("erreur", e.getMessage());
+//				
+//				
+//				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+//				rd.forward(request, response);
+//				e.printStackTrace();
+//			}
 
 		}
 

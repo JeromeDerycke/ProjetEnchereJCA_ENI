@@ -8,19 +8,22 @@ import java.sql.SQLException;
 import fr.eni.projetenchere.bo.Utilisateur;
 
 public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
-
+	
+	
+	
 	private static final String INSERT_UTILISATEUR = "INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
+	private static final String LOGIN_UTILISATEUR = "SELECT * FROM UTILISATEURS WHERE pseudo=? AND mot_de_passe=?";
 
 	@Override
 	public void insert(Utilisateur utilisateur) {
+		ResultSet rs = null;
 
-		if (utilisateur == null) {
-		}
-
-		try (Connection cnx = ConnectionProvider.getConnection();) {
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(INSERT_UTILISATEUR,
+						PreparedStatement.RETURN_GENERATED_KEYS)) {
 
 			cnx.setAutoCommit(false);
-			PreparedStatement pstmt = cnx.prepareStatement(INSERT_UTILISATEUR, PreparedStatement.RETURN_GENERATED_KEYS);
+			;
 			pstmt.setString(1, utilisateur.getPseudo());
 			pstmt.setString(2, utilisateur.getNom());
 			pstmt.setString(3, utilisateur.getPrenom());
@@ -33,9 +36,20 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 			pstmt.setInt(10, 100);
 			pstmt.setBoolean(11, false);
 
-			ResultSet rs = pstmt.getGeneratedKeys();
+			int nbLigneAffectees = pstmt.executeUpdate();
 
-			System.out.println(utilisateur);
+			if (nbLigneAffectees >= 1) {
+				rs = pstmt.getGeneratedKeys();
+				if (rs.next()) {
+					utilisateur.setNoUtilisateur(rs.getInt(1));
+				}
+
+				rs.close();
+				pstmt.close();
+				cnx.commit();
+				System.out.println(utilisateur);
+
+			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -43,12 +57,31 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 
 	}
 
+	public static Boolean login (String login,String mdp) {
+		ResultSet rs = null;
+		boolean existe=false;
+		
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(LOGIN_UTILISATEUR)) {
+			pstmt.setString(1,login);
+			pstmt.setString(2, mdp);
+			
+			rs = pstmt.executeQuery();
+			existe = rs.next();	
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+		return existe;
+	}
+	
 	@Override
-	public void delete(Utilisateur utilisateur) {
+	public void select(Utilisateur utilisateur) {
 	}
 
 	@Override
-	public void select(Utilisateur utilisateur) {
+	public void delete(Utilisateur utilisateur) {
 	}
 
 	@Override
