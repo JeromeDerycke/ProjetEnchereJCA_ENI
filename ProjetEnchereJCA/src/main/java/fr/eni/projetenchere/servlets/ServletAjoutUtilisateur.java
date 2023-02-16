@@ -29,18 +29,19 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-	
-		System.out.println(bt);
 		bt = request.getParameter("bt");
-		
-		if ( bt.equals("inscription")) {
+
+		if (bt.equals("inscription")) {
 
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/AjoutUtilisateur.jsp");
 			rd.forward(request, response);
 
+		} else {
+
 		}
 
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -48,7 +49,6 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-	
 		bt = request.getParameter("bt");
 		System.out.println(bt);
 
@@ -76,19 +76,19 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 			System.out.println(rue);
 			System.out.println(ville);
 			System.out.println(cdp);
-			
-			Utilisateur u = new Utilisateur(pseudo,nom,prenom,email,telephone,rue,cdp,ville,mdp);
+
+			Utilisateur u = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, cdp, ville, mdp);
 			UtilisateurManager um = new UtilisateurManager();
-			
+
 //			try {
-				
-				um.addUtilisateur(u);
-				request.setAttribute("retour", "Insertion reussi");
-				request.setAttribute("utilisateur", u);
-				
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
-				rd.forward(request, response);
-				
+
+			um.addUtilisateur(u);
+			request.setAttribute("retour", "Insertion reussi");
+			request.setAttribute("utilisateur", u);
+
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+			rd.forward(request, response);
+
 //			} catch (BLLException e){
 //				
 //				request.setAttribute("retour", "insertion est un echec");
@@ -100,10 +100,6 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 //				rd.forward(request, response);
 //				e.printStackTrace();
 //			}
-
-				
-		
-			
 
 		}
 

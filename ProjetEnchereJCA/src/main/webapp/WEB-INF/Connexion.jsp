@@ -14,23 +14,23 @@
 <body>
 
 <div class="container" >
-    <form action="connexion" method="post" class="row g-3">
+    <form action="ServletConnexion" method="post" class="row g-3">
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="Email">
+          <label for="login" class="form-label">Identifiant :</label>
+          <input type="text" class="form-control" id="login" name="login">
         </div>
         <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Password</label>
-          <input type="password" class="form-control" id="mdp" name="MotDePasse">
+          <label for="mdp" class="form-label">Mot de passe :</label>
+          <input type="password" class="form-control" id="mdp" name="mdp">
         </div>     
       <div class="col">
           <button type="submit" class="btn btn-primary">Crer un compte</button>
         </div>
         <div class="col">
-          <button type="submit" class="btn btn-primary">Se connecter</button>
+        <button type="submit" class="btn btn-primary">Se connecter </button> 
         </div>        
 		    <div class="col"> 
-          <input type="radio" aria-label="Se souvenir de moi" id="souvenir" name="souvenir" > <label for="souvenir"> Se souvenir de moi</label>
+          <input type="radio" aria-label="Se souvenir de moi" id="souvenir" name="souvenir" value="ok" > <label for="souvenir"> Se souvenir de moi</label>
          </div>
         
       </form>
