@@ -14,13 +14,14 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 	@Override
 	public void insert(Utilisateur utilisateur) {
 
-		if (utilisateur == null) {
-		}
+		ResultSet rs = null;
 
-		try (Connection cnx = ConnectionProvider.getConnection();) {
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(INSERT_UTILISATEUR,
+						PreparedStatement.RETURN_GENERATED_KEYS)) {
 
 			cnx.setAutoCommit(false);
-			PreparedStatement pstmt = cnx.prepareStatement(INSERT_UTILISATEUR, PreparedStatement.RETURN_GENERATED_KEYS);
+			;
 			pstmt.setString(1, utilisateur.getPseudo());
 			pstmt.setString(2, utilisateur.getNom());
 			pstmt.setString(3, utilisateur.getPrenom());
@@ -33,18 +34,20 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 			pstmt.setInt(10, 100);
 			pstmt.setBoolean(11, false);
 
-			ResultSet rs = pstmt.getGeneratedKeys();
-			if(rs.next())
-			{
-				utilisateur.setNoUtilisateur(rs.getInt(1));
-			}
+			int nbLigneAffectees = pstmt.executeUpdate();
 
-			rs.close();
-			pstmt.close();
-			cnx.commit();
-			System.out.println(utilisateur);
-			
-			
+			if (nbLigneAffectees >= 1) {
+				rs = pstmt.getGeneratedKeys();
+				if (rs.next()) {
+					utilisateur.setNoUtilisateur(rs.getInt(1));
+				}
+
+				rs.close();
+				pstmt.close();
+				cnx.commit();
+				System.out.println(utilisateur);
+
+			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();

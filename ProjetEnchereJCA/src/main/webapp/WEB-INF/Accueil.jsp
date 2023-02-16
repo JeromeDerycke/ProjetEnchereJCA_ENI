@@ -37,7 +37,7 @@
         </form>
 
         <div class="row text-end"> 
-          <button type="button" name="connection" value="connection" class="btn btn-light text-dark me-2">Se connecter</button>
+          <button type="button" name="connexion" value="connexion" class="btn btn-light text-dark me-2">Se connecter</button>
           <form action="ServletAjoutUtilisateur"><button type="submit" name="bt" value="inscription"  class="btn btn-primary">S'inscrire</button></form>
        </div>
       </div>

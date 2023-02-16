@@ -28,7 +28,7 @@ public class Utilisateur implements Serializable {
 	
 	
 	public Utilisateur(int noUtilisateur, String pseudo, String nom, String prenom, String email, String telephone,
-			String rue, String codePostal, String ville, String motDePasse, int credit, Boolean adminstrateur) {
+			String rue, String codePostal, String ville, String motDePasse, int credit, Boolean administrateur) {
 		super();
 		this.noUtilisateur = noUtilisateur;
 		this.pseudo = pseudo;
@@ -41,14 +41,14 @@ public class Utilisateur implements Serializable {
 		this.ville = ville;
 		this.motDePasse = motDePasse;
 		this.credit = credit;
-		this.administrateur = adminstrateur;
+		this.administrateur = administrateur;
 	}
 
 
 
 
 	public Utilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue,
-			String codePostal, String ville, String motDePasse, int credit, Boolean adminstrateur) {
+			String codePostal, String ville, String motDePasse, int credit, Boolean administrateur) {
 		super();
 		this.pseudo = pseudo;
 		this.nom = nom;
@@ -60,7 +60,7 @@ public class Utilisateur implements Serializable {
 		this.ville = ville;
 		this.motDePasse = motDePasse;
 		this.credit = credit;
-		this.administrateur = adminstrateur;
+		this.administrateur = administrateur;
 	}
 	
 	public Utilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue,
@@ -170,8 +170,8 @@ public class Utilisateur implements Serializable {
 		return administrateur;
 	}
 
-	public void setAdministrateur(Boolean adminstrateur) {
-		this.administrateur = adminstrateur;
+	public void setAdministrateur(Boolean administrateur) {
+		this.administrateur = administrateur;
 	}
 
 
