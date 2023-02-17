@@ -83,8 +83,7 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 	public List<Utilisateur> select (String pseudo, String email) {
 		
 		ResultSet rs = null;
-		List<Utilisateur> user = new ArrayList<>();
-	
+		List<Utilisateur> user = new ArrayList<>();	
 		
 		try (Connection cnx = ConnectionProvider.getConnection();
 				PreparedStatement pstmt = cnx.prepareStatement(SELECT_UTILISATEUR)) {
