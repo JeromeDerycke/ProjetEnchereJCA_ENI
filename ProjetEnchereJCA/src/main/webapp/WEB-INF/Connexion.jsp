@@ -24,7 +24,7 @@
           <input type="password" class="form-control" id="mdp" name="mdp">
         </div>     
       <div class="col">
-          <button type="submit" class="btn btn-primary">Crer un compte</button>
+          <button type="submit" class="btn btn-primary">Créer un compte</button>
         </div>
         <div class="col">
         <button type="submit" class="btn btn-primary">Se connecter </button> 
