@@ -14,8 +14,8 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 	
 	
 	private static final String INSERT_UTILISATEUR = "INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
-	private static final String LOGIN_UTILISATEUR = "SELECT * FROM UTILISATEURS WHERE pseudo=? AND mot_de_passe=?";
-	private static final String SELECT_UTILISATEUR = "SELECT * FROM UTILISATEURS WHERE pseudo=? or email=?";
+	private static final String LOGIN_UTILISATEUR = "SELECT * FROM UTILISATEURS WHERE pseudo=? OR email=? AND mot_de_passe=?";
+	private static final String SELECT_UTILISATEURADMIN = "SELECT * FROM UTILISATEURS WHERE pseudo=? OR email=?";
 
 	@Override
 	public void insert(Utilisateur utilisateur) {
@@ -60,14 +60,15 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 
 	}
 
-	public static Boolean login (String login,String mdp) {
+	public static Boolean login (String pseudo,String email,String mdp) {
 		ResultSet rs = null;
 		boolean existe=false;
 		
 		try (Connection cnx = ConnectionProvider.getConnection();
 				PreparedStatement pstmt = cnx.prepareStatement(LOGIN_UTILISATEUR)) {
-			pstmt.setString(1,login);
-			pstmt.setString(2, mdp);
+			pstmt.setString(1,pseudo);
+			pstmt.setString(2,email);
+			pstmt.setString(3,mdp);
 			
 			rs = pstmt.executeQuery();
 			existe = rs.next();	
@@ -86,7 +87,7 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 		List<Utilisateur> user = new ArrayList<>();	
 		
 		try (Connection cnx = ConnectionProvider.getConnection();
-				PreparedStatement pstmt = cnx.prepareStatement(SELECT_UTILISATEUR)) {
+				PreparedStatement pstmt = cnx.prepareStatement(SELECT_UTILISATEURADMIN)) {
 			
 			
 			pstmt.setString(1,pseudo);

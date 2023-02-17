@@ -1,8 +1,6 @@
 package fr.eni.projetenchere.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,9 +28,14 @@ public class ServletConnexion extends HttpServlet {
 
 		RequestDispatcher rd = null;
 		Cookie[] cookies = request.getCookies();
+		
+		
 
 		if (cookies != null) {
-			for (Cookie c : cookies) {
+			for (Cookie c : cookies){
+				
+				System.out.println(c.getName());
+				System.out.println(c.getValue());
 				if (c.getName().equals("connexion") && c.getValue().equals("ok")) {
 					rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
 				} else {
@@ -57,11 +60,22 @@ public class ServletConnexion extends HttpServlet {
 
 		RequestDispatcher rd = null;
 
-		String login = request.getParameter("login");
+		String saisie= request.getParameter("login");		
+		String pseudo = saisie;		
+		String email = saisie;	
 		String mdp = request.getParameter("mdp");
-		System.out.println(login);
+		System.out.println(saisie);
 		System.out.println(mdp);
-		if (UtilisateurDAOJDBCImpl.login(login, mdp)) {
+		if (UtilisateurDAOJDBCImpl.login(pseudo, email, mdp)) {        
+			
+			if(request.getParameter("souvenir")!= null) {
+				if (request.getParameter("souvenir").equals("ok")) {
+					Cookie cookie = new Cookie ("connexion","ok");
+					cookie.setMaxAge(2592000);
+					response.addCookie(cookie);
+				}
+			}
+			
 			rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
 			rd.forward(request, response);
 			System.out.println("connexion reussi");
