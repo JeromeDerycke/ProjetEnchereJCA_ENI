@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import fr.eni.projetenchere.bo.Utilisateur;
 
@@ -13,6 +15,7 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 	
 	private static final String INSERT_UTILISATEUR = "INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
 	private static final String LOGIN_UTILISATEUR = "SELECT * FROM UTILISATEURS WHERE pseudo=? AND mot_de_passe=?";
+	private static final String SELECT_UTILISATEUR = "SELECT * FROM UTILISATEURS WHERE pseudo=? or email=?";
 
 	@Override
 	public void insert(Utilisateur utilisateur) {
@@ -76,9 +79,51 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 		return existe;
 	}
 	
+	
+	public List<Utilisateur> select (String pseudo, String email) {
+		
+		ResultSet rs = null;
+		List<Utilisateur> user = new ArrayList<>();
+	
+		
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(SELECT_UTILISATEUR)) {
+			
+			
+			pstmt.setString(1,pseudo);
+			pstmt.setString(2, email);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Utilisateur utilisateur = new Utilisateur();
+				utilisateur.setPseudo(rs.getString("pseudo"));
+				utilisateur.setNom(rs.getString("nom"));
+				utilisateur.setPrenom(rs.getString("prenom"));
+				utilisateur.setEmail(rs.getString("email"));
+				utilisateur.setTelephone(rs.getString("telephone"));
+				utilisateur.setRue(rs.getString("rue"));
+				utilisateur.setCodePostal(rs.getString("code_postal"));
+				utilisateur.setVille(rs.getString("ville"));
+				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+				utilisateur.setCredit(rs.getInt("credit"));
+				utilisateur.setAdministrateur(rs.getBoolean("administrateur"));
+				
+			}
+			
+			
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+	return user;
+	}
+
 	@Override
 	public void select(Utilisateur utilisateur) {
 	}
+	
 
 	@Override
 	public void delete(Utilisateur utilisateur) {
