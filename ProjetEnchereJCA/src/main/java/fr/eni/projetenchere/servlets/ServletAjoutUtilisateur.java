@@ -30,6 +30,7 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 			throws ServletException, IOException {
 
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/AjoutUtilisateur.jsp");
+		
 		rd.forward(request, response);
 
 	}
@@ -40,12 +41,13 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		RequestDispatcher rd = null;
 		bt = request.getParameter("bt");
 		System.out.println(bt);
 
 		if (bt.equals("annuler")) {
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+			 rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+			 rd.forward(request, response);
 
 		} else if (bt.equals("valider")) {
 
@@ -78,7 +80,7 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 			request.setAttribute("retour", "Insertion reussi");
 			request.setAttribute("utilisateur", u);
 
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+			rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
 			rd.forward(request, response);
 
 //			} catch (BLLException e){

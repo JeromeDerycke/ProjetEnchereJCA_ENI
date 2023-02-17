@@ -3,14 +3,13 @@ package fr.eni.projetenchere.servlets;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 /**
  * Servlet implementation class ContextServlet
@@ -28,7 +27,7 @@ public class ContextServlet extends HttpServlet {
 
 		
 		// Cookie
-		Cookie cookie = new Cookie("Accept", "ok");
+		Cookie cookie = new Cookie("accept", "1");
 		cookie.setMaxAge(Integer.MAX_VALUE);
 		response.addCookie(cookie);
 
@@ -39,7 +38,7 @@ public class ContextServlet extends HttpServlet {
 			}
 		}
 
-		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/Accueil.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
 		rd.forward(request, response);
 
 	}

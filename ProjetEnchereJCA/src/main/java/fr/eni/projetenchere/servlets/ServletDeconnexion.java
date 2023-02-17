@@ -1,6 +1,8 @@
 package fr.eni.projetenchere.servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,10 +29,14 @@ public class ServletDeconnexion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd =null;
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		response.sendRedirect("/WEB-INF/Accueuil.jsp");
+
+		 rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
+		rd.forward(request, response);
+		
 	}
 
 	/**
