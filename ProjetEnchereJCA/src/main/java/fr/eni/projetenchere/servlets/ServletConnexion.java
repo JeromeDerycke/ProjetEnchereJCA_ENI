@@ -54,11 +54,9 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
-		
+
 		RequestDispatcher rd = null;
-		
+
 		String login = request.getParameter("login");
 		String mdp = request.getParameter("mdp");
 		System.out.println(login);
@@ -68,14 +66,12 @@ public class ServletConnexion extends HttpServlet {
 			rd.forward(request, response);
 			System.out.println("connexion reussi");
 		} else {
-			  
-			rd =request.getRequestDispatcher("/WEB-INF/Connexion.jsp");  
-	        rd.include(request,response); 
-	        System.out.println("connexion echouée");
+
+			rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
+			rd.include(request, response);
+			System.out.println("connexion echouée");
 		}
-		
-		 
-		
+
 	}
 
 }
