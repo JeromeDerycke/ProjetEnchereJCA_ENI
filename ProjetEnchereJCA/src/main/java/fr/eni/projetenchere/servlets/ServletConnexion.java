@@ -34,8 +34,7 @@ public class ServletConnexion extends HttpServlet {
 		if (cookies != null) {
 			for (Cookie c : cookies){
 				
-				System.out.println(c.getName());
-				System.out.println(c.getValue());
+				
 				if (c.getName().equals("connexion") && c.getValue().equals("ok")) {
 					rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
 				} else {
@@ -64,8 +63,7 @@ public class ServletConnexion extends HttpServlet {
 		String pseudo = saisie;		
 		String email = saisie;	
 		String mdp = request.getParameter("mdp");
-		System.out.println(saisie);
-		System.out.println(mdp);
+		
 		if (UtilisateurDAOJDBCImpl.login(pseudo, email, mdp)) {        
 			
 			if(request.getParameter("souvenir")!= null) {
