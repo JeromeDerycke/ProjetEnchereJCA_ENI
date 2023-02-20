@@ -52,7 +52,8 @@
 			<div class=" d-flex no-wrap text-end">
 
 				<form action="ServletDeconnexion">
-					<button type="submit" class="btn btn-light text-dark me-3">Se déconnecter</button>
+					<button type="submit" class="btn btn-light text-dark me-3">Se
+						déconnecter</button>
 				</form>
 				<form action="ServletConnexion">
 					<button type="submit" class="btn btn-light text-dark me-3">Connexion</button>
