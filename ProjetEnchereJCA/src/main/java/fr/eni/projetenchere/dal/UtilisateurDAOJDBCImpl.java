@@ -91,7 +91,7 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 			
 			
 			pstmt.setString(1,pseudo);
-			pstmt.setString(2, email);
+			pstmt.setString(2,email);
 			
 			rs = pstmt.executeQuery();
 			

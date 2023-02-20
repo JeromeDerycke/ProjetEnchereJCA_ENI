@@ -30,18 +30,18 @@ public class ServletConnexion extends HttpServlet {
 		Cookie[] cookies = request.getCookies();
 
 		if (cookies != null) {
-			boolean connecte = false;
+			
 			for (Cookie c : cookies) {
 
 				if (c.getName().equals("connexion") && c.getValue().equals("ok")) {
-					 rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp"); 
+					 rd = request.getRequestDispatcher("WEB-INF/Accueil.jsp"); 
 				} else {
-					rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
+					rd = request.getRequestDispatcher("WEB-INF/Connexion.jsp");
 				}
 			}
 
 		} else {
-			rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
+			rd = request.getRequestDispatcher("WEB-INF/Connexion.jsp");
 		}
 
 		rd.forward(request, response);
@@ -63,21 +63,26 @@ public class ServletConnexion extends HttpServlet {
 		String mdp = request.getParameter("mdp");
 
 		if (UtilisateurDAOJDBCImpl.login(pseudo, email, mdp)) {
-
+			
+			Cookie cookieP = new Cookie("Pseudo",saisie);
+			response.addCookie(cookieP);
+			
 			if (request.getParameter("souvenir") != null) {
 				if (request.getParameter("souvenir").equals("ok")) {
 					Cookie cookie = new Cookie("connexion", "ok");
 					cookie.setMaxAge(2592000);
 					response.addCookie(cookie);
 				}
+				
 			}
-
-			rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
-			rd.forward(request, response);
+			
+			rd = request.getRequestDispatcher("WEB-INF/Accueil.jsp");
+			rd.forward(request, response);			
 			System.out.println("connexion reussi");
+			
 		} else {
 
-			rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
+			rd = request.getRequestDispatcher("WEB-INF/Connexion.jsp");
 			rd.include(request, response);
 			System.out.println("connexion echouée");
 		}
