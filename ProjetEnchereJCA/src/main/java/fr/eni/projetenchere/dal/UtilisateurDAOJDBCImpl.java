@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import fr.eni.projetenchere.bo.Utilisateur;
@@ -81,11 +82,10 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 	}
 	
 	
-	public List<Utilisateur> select (String pseudo, String email) {
+	public static Utilisateur select (String pseudo, String email) {
 		
 		ResultSet rs = null;
-		List<Utilisateur> user = new ArrayList<>();	
-		
+		Utilisateur utilisateur = null;
 		try (Connection cnx = ConnectionProvider.getConnection();
 				PreparedStatement pstmt = cnx.prepareStatement(SELECT_UTILISATEURADMIN)) {
 			
@@ -96,7 +96,7 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				Utilisateur utilisateur = new Utilisateur();
+				utilisateur = new Utilisateur();
 				utilisateur.setPseudo(rs.getString("pseudo"));
 				utilisateur.setNom(rs.getString("nom"));
 				utilisateur.setPrenom(rs.getString("prenom"));
@@ -117,7 +117,7 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 			e.printStackTrace();
 		}
 	
-	return user;
+	return utilisateur;
 	}
 
 	@Override

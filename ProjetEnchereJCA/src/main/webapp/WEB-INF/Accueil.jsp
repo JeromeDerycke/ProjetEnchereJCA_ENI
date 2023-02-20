@@ -61,13 +61,15 @@
 				<form action="ServletAjoutUtilisateur">
 					<button type="submit" class="btn btn-primary me-3">S'inscrire</button>
 				</form>
-
-				<button type="button" class="btn btn-primary position-relative">
-					Profil <span
-						class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+				
+					<form action="ServletProfil">
+				<button type="submit" class="btn btn-primary position-relative">
+					Profil 
+					<span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
 						<span class="visually-hidden">New alerts</span>
 					</span>
 				</button>
+				</form>
 
 
 

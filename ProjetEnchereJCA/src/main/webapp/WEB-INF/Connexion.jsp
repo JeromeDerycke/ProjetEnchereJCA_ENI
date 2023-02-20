@@ -44,6 +44,7 @@
 		<form action="ServletConnexion" method="post" class="row g-3">
 			<h1 class="h3 mb-3 fw-normal">Veuillez vous connecter</h1>
 
+
 			<div class="form-floating">
 				<input type="text" class="form-control" id="floatingInput"
 					placeholder="name@example.com" id="login" name="login"> <label
@@ -58,7 +59,7 @@
 			<div class="checkbox mb-3">
 				<label> <input type="checkbox"
 					aria-label="Se souvenir de moi" id="souvenir" name="souvenir"
-					value="ok"> Se souvenir de moi
+					value="souv"> Se souvenir de moi
 				</label>
 			</div>
 			<button class="w-100 btn btn-lg btn-primary" type="submit">S'identifier</button>
