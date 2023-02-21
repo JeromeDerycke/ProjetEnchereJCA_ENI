@@ -13,7 +13,6 @@ public class UtilisateurManager {
 	}
 	
 	public void addUtilisateur(Utilisateur u) {
-
 		utilisateurDAO.insert(u);
 	}
 	
