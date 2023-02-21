@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.projetenchere.bll.UtilisateurManager;
+import fr.eni.projetenchere.bo.Utilisateur;
 import fr.eni.projetenchere.dal.UtilisateurDAOJDBCImpl;
 
 /**
@@ -61,8 +63,11 @@ public class ServletConnexion extends HttpServlet {
 		String pseudo = saisie;
 		String email = saisie;
 		String mdp = request.getParameter("mdp");
+		
+		UtilisateurManager um = new UtilisateurManager();
+		boolean utilisateurExiste = um.login(pseudo,email,mdp);
 
-		if (UtilisateurDAOJDBCImpl.login(pseudo, email, mdp)) {
+		if (utilisateurExiste) {
 
 			Cookie cookieP = new Cookie("pseudo", saisie);
 
