@@ -1,6 +1,7 @@
 package fr.eni.projetenchere.bo;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class ArticleVendu implements Serializable {
@@ -9,6 +10,7 @@ public class ArticleVendu implements Serializable {
 	
 	private Categorie noCategorie; 
 	private Utilisateur noUtilisateur;
+	//private Utilisateur pseudo;
 	private int noArticle;	
 	private String nomArticle;
 	private String description;
@@ -179,6 +181,20 @@ public class ArticleVendu implements Serializable {
 	public void setEtatVente(String etatVente) {
 		this.etatVente = etatVente;
 	}
+
+
+
+
+//	public Utilisateur getPseudo() {
+//		return pseudo;
+//	}
+//
+//
+//
+//
+//	public void setPseudo(Utilisateur pseudo) {
+//		this.pseudo = pseudo;
+//	}
 
 
 	
