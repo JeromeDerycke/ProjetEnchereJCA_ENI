@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.projetenchere.bll.UtilisateurManager;
 import fr.eni.projetenchere.bo.Utilisateur;
 import fr.eni.projetenchere.dal.UtilisateurDAOJDBCImpl;
 
@@ -30,7 +31,7 @@ public class ServletProfil extends HttpServlet {
 			throws ServletException, IOException {
 
 		RequestDispatcher rd = null;
-		
+
 		Cookie[] cookies = request.getCookies();
 
 		if (cookies != null) {
@@ -39,9 +40,15 @@ public class ServletProfil extends HttpServlet {
 
 				if (c.getName().equals("pseudo")) {
 
-					Utilisateur utilisateur = UtilisateurDAOJDBCImpl.select(c.getValue(), c.getValue());
+					Utilisateur utilisateur = new Utilisateur();
+					UtilisateurManager um = new UtilisateurManager();
+
+					utilisateur = um.select(c.getValue(), c.getValue());
+					System.out.println(utilisateur.getPseudo());
+					System.out.println(utilisateur.getEmail());
+
 					request.setAttribute("utilisateur", utilisateur);
-					rd = request.getRequestDispatcher("/WEB-INF/Profil.jsp");	
+					rd = request.getRequestDispatcher("/WEB-INF/Profil.jsp");
 					break;
 
 				} else {
@@ -50,11 +57,9 @@ public class ServletProfil extends HttpServlet {
 			}
 
 		} else {
-			
+
 			rd = request.getRequestDispatcher("WEB-INF/Connexion.jsp");
 		}
-
-		
 
 		rd.forward(request, response);
 

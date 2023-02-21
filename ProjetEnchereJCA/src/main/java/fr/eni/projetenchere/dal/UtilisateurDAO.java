@@ -1,7 +1,5 @@
 package fr.eni.projetenchere.dal;
 
-import java.util.List;
-
 import fr.eni.projetenchere.bo.Utilisateur;
 
 public interface UtilisateurDAO {
@@ -18,6 +16,6 @@ public interface UtilisateurDAO {
 	
 //	public Boolean login (String pseudo,String email,String mdp);
 //	
-//	public List<Utilisateur> select (String pseudo, String email);
+public Utilisateur select (String pseudo, String email);
 
 }

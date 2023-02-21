@@ -82,7 +82,7 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 	}
 	
 	
-	public static Utilisateur select (String pseudo, String email) {
+	public Utilisateur select (String pseudo, String email) {
 		
 		ResultSet rs = null;
 		Utilisateur utilisateur = null;
@@ -107,11 +107,8 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 				utilisateur.setVille(rs.getString("ville"));
 				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
 				utilisateur.setCredit(rs.getInt("credit"));
-				utilisateur.setAdministrateur(rs.getBoolean("administrateur"));
-				
+				utilisateur.setAdministrateur(rs.getBoolean("administrateur"));	
 			}
-			
-			
 		} 
 		catch (SQLException e) {
 			e.printStackTrace();

@@ -6,10 +6,21 @@ import fr.eni.projetenchere.dal.UtilisateurDAO;
 
 public class UtilisateurManager {
 
+	private static UtilisateurDAO utilisateurDAO;
+	
+	public UtilisateurManager() {
+		utilisateurDAO = DAOFactory.getutilisateurDAO();
+	}
+	
 	public void addUtilisateur(Utilisateur u) {
 
-		UtilisateurDAO ui = DAOFactory.getutilisateurDAO();
-		ui.insert(u);
+		utilisateurDAO.insert(u);
+	}
+	
+	public Utilisateur select(String pseudo,String email) {
+		
+		Utilisateur utilisateur = utilisateurDAO.select(pseudo, email);
+		return utilisateur;
 	}
 
 }
