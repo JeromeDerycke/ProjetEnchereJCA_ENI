@@ -10,7 +10,6 @@ public class ArticleVendu implements Serializable {
 	
 	private Categorie noCategorie; 
 	private Utilisateur noUtilisateur;
-	//private Utilisateur pseudo;
 	private int noArticle;	
 	private String nomArticle;
 	private String description;
@@ -19,8 +18,13 @@ public class ArticleVendu implements Serializable {
 	private int miseAPrix;
 	private int prixVente;
 	private String etatVente;
+	private Retrait lieuRetrait;
 	
 	
+	
+
+
+
 	public ArticleVendu ( ) {
 		
 	}
@@ -28,6 +32,26 @@ public class ArticleVendu implements Serializable {
 
 	
 	
+	public ArticleVendu(Categorie noCategorie, Utilisateur noUtilisateur, int noArticle, String nomArticle,
+			String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres, int miseAPrix, int prixVente,
+			String etatVente, Retrait lieuRetrait) {
+		super();
+		this.noCategorie = noCategorie;
+		this.noUtilisateur = noUtilisateur;
+		this.noArticle = noArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEncheres = dateDebutEncheres;
+		this.dateFinEncheres = dateFinEncheres;
+		this.miseAPrix = miseAPrix;
+		this.prixVente = prixVente;
+		this.etatVente = etatVente;
+		this.lieuRetrait = lieuRetrait;
+	}
+
+
+
+
 	public ArticleVendu(int noArticle, Categorie noCategorie, Utilisateur noUtilisateur, String nomArticle,
 			String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres, int miseAPrix, int prixVente,
 			String etatVente) {
@@ -183,19 +207,38 @@ public class ArticleVendu implements Serializable {
 	}
 
 
+	public Retrait getLieuRetrait() {
+		return lieuRetrait;
+	}
 
 
-//	public Utilisateur getPseudo() {
-//		return pseudo;
-//	}
-//
-//
-//
-//
-//	public void setPseudo(Utilisateur pseudo) {
-//		this.pseudo = pseudo;
-//	}
 
+
+	public void setLieuRetrait(Retrait lieuRetrait) {
+		this.lieuRetrait = lieuRetrait;
+	}
+
+
+	public void setNoCategorie(String libelle) {
+
+		
+	}
+
+	public void setNoUtilisateur(String pseudo) {
+
+		
+	}
+
+	public void setRetraitRue (String lieuRetrait) {
+		
+	}
+	
+	public void setRetraitCp (String lieuRetrait) {
+		
+	}
+	public void setRetraitVille (String lieuRetrait) {
+	
+}
 
 	
 	

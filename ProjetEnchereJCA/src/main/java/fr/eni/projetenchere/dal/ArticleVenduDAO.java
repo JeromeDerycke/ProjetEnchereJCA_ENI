@@ -1,7 +1,7 @@
 package fr.eni.projetenchere.dal;
 
 import fr.eni.projetenchere.bo.ArticleVendu;
-import fr.eni.projetenchere.bo.Utilisateur;
+
 
 public interface ArticleVenduDAO {
 

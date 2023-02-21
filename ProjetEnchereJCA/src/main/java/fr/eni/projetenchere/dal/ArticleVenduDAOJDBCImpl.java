@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import fr.eni.projetenchere.bo.ArticleVendu;
 import fr.eni.projetenchere.bo.Categorie;
+import fr.eni.projetenchere.bo.Retrait;
 import fr.eni.projetenchere.bo.Utilisateur;
 
 public class ArticleVenduDAOJDBCImpl implements ArticleVenduDAO {
@@ -88,11 +89,13 @@ public class ArticleVenduDAOJDBCImpl implements ArticleVenduDAO {
 				ArticleVendu = new ArticleVendu();
 				ArticleVendu.setNomArticle(rs.getString("nom_article"));
 				ArticleVendu.setDescription(rs.getString("description"));
-//				ArticleVendu.setNoCategorie(rs.getObject()));
-//				ArticleVendu.setMiseAPrix(rs.getString("prix_initial"));
-//				ArticleVendu.setDateFinEncheres(rs.get("date_fin_enchere"));
-//				ArticleVendu.Utilisateur(rs.getString("pseudo"));
-				
+				ArticleVendu.setNoCategorie(((Categorie) rs).getLibelle());
+				ArticleVendu.setMiseAPrix(rs.getInt("prix_initial"));
+				ArticleVendu.setDateFinEncheres(rs.getDate("date_fin_enchere").toLocalDate());
+				ArticleVendu.setNoUtilisateur(((Utilisateur)rs).getPseudo());
+				ArticleVendu.setRetraitRue(((Retrait)rs).getRue());
+				ArticleVendu.setRetraitCp(((Retrait)rs).getCodePostal());
+				ArticleVendu.setRetraitVille(((Retrait)rs).getVille());
 				
 			}
 		} 

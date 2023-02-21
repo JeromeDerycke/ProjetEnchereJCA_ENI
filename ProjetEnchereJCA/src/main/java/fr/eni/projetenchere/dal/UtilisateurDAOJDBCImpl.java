@@ -16,7 +16,7 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 	
 	private static final String INSERT_UTILISATEUR = "INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
 	private static final String LOGIN_UTILISATEUR = "SELECT * FROM UTILISATEURS WHERE (pseudo=? OR email=?) AND mot_de_passe=?";
-	private static final String SELECT_UTILISATEURADMIN = "SELECT * FROM UTILISATEURS WHERE pseudo=? OR email=?";
+	private static final String SELECT_UTILISATEUR= "SELECT * FROM UTILISATEURS WHERE pseudo=? OR email=?";
 
 	@Override
 	public void insert(Utilisateur utilisateur) {
@@ -89,7 +89,7 @@ public class UtilisateurDAOJDBCImpl implements UtilisateurDAO {
 		ResultSet rs = null;
 		Utilisateur utilisateur = null;
 		try (Connection cnx = ConnectionProvider.getConnection();
-				PreparedStatement pstmt = cnx.prepareStatement(SELECT_UTILISATEURADMIN)) {
+				PreparedStatement pstmt = cnx.prepareStatement(SELECT_UTILISATEUR)) {
 			
 			
 			pstmt.setString(1,pseudo);
