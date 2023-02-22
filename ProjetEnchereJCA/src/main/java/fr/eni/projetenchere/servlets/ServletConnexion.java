@@ -31,7 +31,7 @@ public class ServletConnexion extends HttpServlet {
 		if (cookies != null) {
 			for (Cookie c : cookies) {
 				if (c.getName().equals("connexion") && c.getValue().equals("ok")) {
-					rd = request.getRequestDispatcher("WEB-INF/Accueil.jsp");
+					rd = request.getRequestDispatcher("WEB-INF/Bienvenue.jsp");
 					break;
 				} else {
 
@@ -81,7 +81,7 @@ public class ServletConnexion extends HttpServlet {
 			}
 
 			response.addCookie(cookieP);
-			rd = request.getRequestDispatcher("WEB-INF/Accueil.jsp");
+			rd = request.getRequestDispatcher("WEB-INF/Bienvenue.jsp");
 			System.out.println("connexion reussi");
 
 		} else {

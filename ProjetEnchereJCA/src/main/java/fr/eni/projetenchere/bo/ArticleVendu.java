@@ -86,14 +86,14 @@ public class ArticleVendu implements Serializable {
 
 
 	public ArticleVendu(String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres,
-			int miseAPrix, Categorie noCategorie) {
+			int miseAPrix) {
 		super();
 		this.nomArticle = nomArticle;
 		this.description = description;
 		this.dateDebutEncheres = dateDebutEncheres;
 		this.dateFinEncheres = dateFinEncheres;
 		this.miseAPrix = miseAPrix;
-		this.noCategorie = noCategorie;
+		//this.noCategorie = noCategorie;
 	}
 
 	
