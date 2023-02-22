@@ -43,7 +43,10 @@
 				</div>
 				<div class="col-md-6">
 					<label for="inputEmail4" class="form-label">Pseudo</label> <input
-						type="text" class="form-control" id="Pseudo" name="Pseudo">
+						type="text" class="form-control" id="Pseudo" name="Pseudo"
+						pattern="[@]"
+						title="Le pseudo ne peut pas contenir le caractère @">
+
 				</div>
 				<div class="col-md-6">
 					<label for="inputPassword4" class="form-label">telephone</label> <input
@@ -65,11 +68,11 @@
 				<div class="col">
 					<button class="btn btn-primary" type="submit" name="bt"
 						value="annuler" action="/WEB-INF/Accueil">Annuler</button>
-				<button class="btn btn-primary" type="submit" name="bt"
-					value="valider" action="/WEB-INF/Bienvenue">S'inscrire</button>
+					<button class="btn btn-primary" type="submit" name="bt"
+						value="valider" action="/WEB-INF/Bienvenue">S'inscrire</button>
+				</div>
+			</form>
 		</div>
-		</form>
-	</div>
 	</div>
 
 	<script
