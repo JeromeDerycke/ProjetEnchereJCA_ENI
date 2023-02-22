@@ -27,5 +27,14 @@ public class UtilisateurManager {
 		Utilisateur utilisateur = utilisateurDAO.select(pseudo, email);
 		return utilisateur;
 	}
+	
+	public Boolean deleteUtilisateur(String email, String mdp) {
+		return utilisateurDAO.deleteUtilisateur(email, mdp);
+	}
+	
+	public void updateUtilisateur(Utilisateur u) {
+		utilisateurDAO.update(u);
+	}
 
+	
 }

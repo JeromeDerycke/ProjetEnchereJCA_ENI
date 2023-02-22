@@ -92,7 +92,7 @@
 				aria-label="Disabled input example" disabled>
 		</div>
 		<br>
-		<div class="col">
+		<div class="col d-flex no-wrap">
 		<form action="ServletAccueil">
 			<button class="btn btn-primary" type="submit" name="bt"
 				value="accueil">Accueil</button></form>

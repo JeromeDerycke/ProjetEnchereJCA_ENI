@@ -1,8 +1,7 @@
 package fr.eni.projetenchere.servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.eni.projetenchere.bll.UtilisateurManager;
 import fr.eni.projetenchere.bo.Utilisateur;
-import fr.eni.projetenchere.dal.UtilisateurDAOJDBCImpl;
+
 
 /**
  * Servlet implementation class ServletProfil

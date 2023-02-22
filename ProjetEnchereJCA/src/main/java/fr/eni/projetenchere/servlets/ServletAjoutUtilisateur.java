@@ -43,7 +43,7 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 			throws ServletException, IOException {
 		RequestDispatcher rd = null;
 		bt = request.getParameter("bt");
-		System.out.println(bt);
+		
 
 		if (bt.equals("annuler")) {
 			 rd = request.getRequestDispatcher("/WEB-INF/Accueil.jsp");
@@ -61,15 +61,6 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 			String ville = request.getParameter("Ville");
 			String cdp = request.getParameter("CodePostal");
 
-			System.out.println(email);
-			System.out.println(mdp);
-			System.out.println(nom);
-			System.out.println(prenom);
-			System.out.println(pseudo);
-			System.out.println(telephone);
-			System.out.println(rue);
-			System.out.println(ville);
-			System.out.println(cdp);
 
 			Utilisateur u = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, cdp, ville, mdp);
 			UtilisateurManager um = new UtilisateurManager();
