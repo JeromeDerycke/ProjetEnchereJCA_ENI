@@ -34,7 +34,7 @@
 
 
 <!-- Custom styles for this template -->
-<link  rel="stylesheet" href="css/sign-in.css" />
+<link rel="stylesheet" href="css/sign-in.css" />
 </head>
 <body class="text-center">
 
@@ -45,15 +45,18 @@
 			<h1 class="h3 mb-3 fw-normal">Veuillez vous connecter</h1>
 
 
-			<div class="form-floating">
+			<div class="form-floating">			
 				<input type="text" class="form-control" id="floatingInput"
 					placeholder="name@example.com" id="login" name="login"> <label
-					for="floatingInput">Adresse e-mail / Pseudo</label>
+					for="floatingInput"> Adresse e-mail / Pseudo</label>
 			</div>
 			<div class="form-floating">
 				<input type="password" class="form-control" id="floatingPassword"
 					placeholder="Password" id="mdp" name="mdp"> <label
 					for="floatingPassword">Mot de passe</label>
+					<c:if test="${not empty msgErreur}">
+						<p style="color: red">${msgErreur}</p>
+					</c:if>
 			</div>
 
 			<div class="checkbox mb-3">

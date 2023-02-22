@@ -85,7 +85,8 @@ public class ServletConnexion extends HttpServlet {
 			System.out.println("connexion reussi");
 
 		} else {
-
+			
+			request.setAttribute("msgErreur", "Identifiant ou mot de passe invalide");
 			rd = request.getRequestDispatcher("WEB-INF/Connexion.jsp");
 			System.out.println("connexion echouée");
 		}

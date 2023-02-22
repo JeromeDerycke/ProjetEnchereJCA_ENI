@@ -87,7 +87,7 @@ public class ServletModifierProfil extends HttpServlet {
 		
 		
 		um.updateUtilisateur(u);
-		request.setAttribute("retour", "Insertion reussi");
+		
 		request.setAttribute("utilisateur", u);
 		
 		rd = request.getRequestDispatcher("/WEB-INF/Profil.jsp");
