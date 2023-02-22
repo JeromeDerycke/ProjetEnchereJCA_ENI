@@ -47,17 +47,19 @@
 				role="search">
 				<input type="search" class="form-control" placeholder="Chercher..."
 					aria-label="search">
-			</form>
+	</form>
 
 			<div class=" d-flex no-wrap text-end">
 
-				<form action="ServletConnexion">
-					<button type="submit" class="btn btn-light text-dark me-3">Se connecter</button>
+				<form action="ServletNouvelleVente">
+					<button type="submit" class="btn btn-primary position-relative">Vendre un article</button>
+				</form>					
+				<form action="ServletProfil">
+					<button type="submit" class="btn btn-primary position-relative">Mon profil</button>
 				</form>
-				<form action="ServletAjoutUtilisateur">
-					<button type="submit" class="btn btn-primary me-3">S'inscrire</button>
+				<form action="ServletDeconnexion">
+					<button type="submit" class="btn btn-light text-dark me-3">Se déconnecter</button>
 				</form>
-
 
 
 
@@ -128,7 +130,7 @@
 
 <div class="container">
 	<footer class="py-3 my-4">
-		<p class="text-center text-muted">&copy; 2023 Encheres, <a href="https://eni-ecole.fr">ENI-Ecole</a></p>
+		<p class="text-center text-muted">&copy; 2023 EncheresJCA, <a href="https://eni-ecole.fr">ENI-Ecole</a></p>
 	</footer>
 </div>
 

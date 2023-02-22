@@ -47,10 +47,10 @@
 				<label for="categorie">Catégorie :</label> <select
 					class="form-control" id="categorie" name="categorie">
 					<option value="">--Choisissez une catégorie--</option>
-					<option value="electronique">Informatique</option>
-					<option value="vetements">Vêtements</option>
-					<option value="maison">Ameublement</option>
-					<option value="sports">Sports et loisirs</option>
+					<option value="electronique">1 - Informatique</option>
+					<option value="vetements">2 - Vêtements</option>
+					<option value="maison">3 - Ameublement</option>
+					<option value="sports">4 - Sports et loisirs</option>
 				</select>
 			</div>
 			<form>
@@ -62,9 +62,9 @@
 				</fieldset>
 			</form>
 			<button type="submit" class="btn btn-primary" name="bt"
-				value="valider">Mettre en vente</button>
+				value="valider" Action="/WEB-INF/Bienvenue.jsp">Enregistrer</button>
 			<button type="submit" class="btn btn-primary" name="bt"
-				value="annuler">Annuler</button>
+				value="annuler" Action="/WEB-INF/Bienvenue.jsp">Annuler</button>
 		</form>
 	</div>
 
