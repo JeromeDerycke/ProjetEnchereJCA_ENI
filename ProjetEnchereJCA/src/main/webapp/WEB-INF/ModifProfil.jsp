@@ -82,7 +82,7 @@
 						type="text" class="form-control" id="CodePostal" name="CodePostal"
 						placeholder="${utilisateur.codePostal}"
 						aria-label="Disabled input example">
-				</div><button class="btn btn-primary" type="submit" name="bt"
+				</div><button class="btn btn-primary mt-3" type="submit" name="bt"
 					value="accueil">Enregistrer modification</button>
 					</form>
 		</div>

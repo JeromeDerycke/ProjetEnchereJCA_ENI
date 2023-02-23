@@ -43,6 +43,7 @@ public class ServletProfil extends HttpServlet {
 					UtilisateurManager um = new UtilisateurManager();
 
 					utilisateur = um.select(c.getValue(), c.getValue());
+				
 
 					request.setAttribute("utilisateur", utilisateur);
 					rd = request.getRequestDispatcher("/WEB-INF/Profil.jsp");

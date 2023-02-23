@@ -41,6 +41,8 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		RequestDispatcher rd = null;
 		bt = request.getParameter("bt");
 		
@@ -68,6 +70,7 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 //			try {
 
 			um.addUtilisateur(u);
+			
 			request.setAttribute("retour", "Insertion reussi");
 			request.setAttribute("utilisateur", u);
 

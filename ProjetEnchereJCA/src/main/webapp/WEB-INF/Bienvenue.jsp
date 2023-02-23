@@ -52,10 +52,10 @@
 			<div class=" d-flex no-wrap text-end">
 
 				<form action="ServletNouvelleVente">
-					<button type="submit" class="btn btn-primary position-relative">Vendre un article</button>
+					<button type="submit" class="btn btn-primary me-3">Vendre un article</button>
 				</form>					
 				<form action="ServletProfil">
-					<button type="submit" class="btn btn-primary position-relative">Mon profil</button>
+					<button type="submit" class="btn btn-primary me-3">Mon profil</button>
 				</form>
 				<form action="ServletDeconnexion">
 					<button type="submit" class="btn btn-light text-dark me-3">Se déconnecter</button>

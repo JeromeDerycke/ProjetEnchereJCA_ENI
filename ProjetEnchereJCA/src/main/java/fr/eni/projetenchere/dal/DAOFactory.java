@@ -10,5 +10,11 @@ public class DAOFactory {
 		return new ArticleVenduDAOJDBCImpl();
 	}
 	
-
+	
+	public static CategorieDAO getcategorieDAO() {
+		return new CategorieDAOJDBCImpl();
+	}
+	
+	
+	
 }

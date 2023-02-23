@@ -5,12 +5,12 @@ import java.io.Serializable;
 public class Categorie implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private int noCategorie;
 	private String libelle;
-	
-	public Categorie () {
-		
+
+	public Categorie() {
+
 	}
 
 	public Categorie(int noCategorie, String libelle) {
@@ -35,10 +35,9 @@ public class Categorie implements Serializable {
 		this.libelle = libelle;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Categorie{" + "noCategorie=" + noCategorie + ", libelle='" + libelle + '\'' + '}';
 
-	
-
-	
-	
+	}
 }

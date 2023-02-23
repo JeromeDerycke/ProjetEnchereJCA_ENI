@@ -44,7 +44,7 @@ public class ServletSuprimmerProfil extends HttpServlet {
 		boolean utilisateurExiste = um.deleteUtilisateur(email, mdp);
 
 		if (utilisateurExiste) {
-			rd = request.getRequestDispatcher("WEB-INF/Accueil.jsp");
+			rd = request.getRequestDispatcher("ServletDeconnexion");
 			System.out.println("supression reussi");
 		} else {
 

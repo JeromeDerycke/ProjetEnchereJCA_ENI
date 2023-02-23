@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,10 +48,9 @@
 				<label for="categorie">Catégorie :</label> <select
 					class="form-control" id="categorie" name="categorie">
 					<option value="">--Choisissez une catégorie--</option>
-					<option value="electronique">1 - Informatique</option>
-					<option value="vetements">2 - Vêtements</option>
-					<option value="maison">3 - Ameublement</option>
-					<option value="sports">4 - Sports et loisirs</option>
+					<c:forEach items="${Categories}" var="categorie">
+						<option value=" ${categorie.noCategorie}">${categorie.noCategorie} - ${categorie.libelle} </option>
+					</c:forEach>
 				</select>
 			</div>
 			<form>

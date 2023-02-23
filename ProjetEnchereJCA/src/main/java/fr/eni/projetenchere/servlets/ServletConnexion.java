@@ -56,7 +56,6 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		RequestDispatcher rd = null;
 
 		String saisie = request.getParameter("login");

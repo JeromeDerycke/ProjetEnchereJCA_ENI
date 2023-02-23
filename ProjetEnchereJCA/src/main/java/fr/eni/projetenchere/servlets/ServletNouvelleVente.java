@@ -3,6 +3,8 @@ package fr.eni.projetenchere.servlets;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.RequestDispatcher;
@@ -13,10 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.eni.projetenchere.bll.ArticleVenduManager;
-import fr.eni.projetenchere.bll.UtilisateurManager;
+import fr.eni.projetenchere.bll.CategorieManager;
 import fr.eni.projetenchere.bo.ArticleVendu;
 import fr.eni.projetenchere.bo.Categorie;
-import fr.eni.projetenchere.bo.Utilisateur;
+import fr.eni.projetenchere.dal.CategorieDAO;
+import fr.eni.projetenchere.dal.CategorieDAOJDBCImpl;
+import fr.eni.projetenchere.dal.DAOFactory;
 
 /**
  * Servlet implementation class ServletNouvelleVente
@@ -32,7 +36,18 @@ public class ServletNouvelleVente extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/NouvelleVente.jsp");
+		RequestDispatcher rd = null;
+
+		CategorieManager cm = new CategorieManager();
+		List<Categorie> categories = null;
+
+		categories = cm.selectAll();
+
+		request.setAttribute("Categories", categories);
+
+		System.out.println(categories);
+
+		rd = request.getRequestDispatcher("/WEB-INF/NouvelleVente.jsp");
 		rd.forward(request, response);
 	}
 
@@ -44,7 +59,7 @@ public class ServletNouvelleVente extends HttpServlet {
 			throws ServletException, IOException {
 		RequestDispatcher rd = null;
 		bt = request.getParameter("bt");
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-mm-dd", Locale.FRANCE);
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.FRANCE);
 
 		if (bt.equals("annuler")) {
 			rd = request.getRequestDispatcher("/WEB-INF/Bienvenue.jsp");
@@ -54,17 +69,15 @@ public class ServletNouvelleVente extends HttpServlet {
 
 			String nom = request.getParameter("nom");
 			String description = request.getParameter("description");
-			LocalDate dateDebut = LocalDate.parse(request.getParameter("partydatedebut"),format);
-			LocalDate dateFin = LocalDate.parse(request.getParameter("partydatefin"), format);
 			int prix = Integer.parseInt(request.getParameter("prix"));
-			String categorieR = request.getParameter("categorie");
-			//Categorie categorie = Categorie.parse(categorieR);
-			//Categorie categorie = parse.Object(request.getParameter("categorie"));
+			LocalDate dateDebut = LocalDate.parse(request.getParameter("partydatedebut"), format);
+			LocalDate dateFin = LocalDate.parse(request.getParameter("partydatefin"), format);			
+			String categorie = request.getParameter("categorie");
 			
 
 			ArticleVendu a = new ArticleVendu(nom, description, dateDebut, dateFin, prix);
 			ArticleVenduManager am = new ArticleVenduManager();
-			
+
 			am.addArticleVendu(a);
 			request.setAttribute("retour", "Insertion reussi");
 			request.setAttribute("utilisateur", a);
@@ -73,5 +86,5 @@ public class ServletNouvelleVente extends HttpServlet {
 			rd.forward(request, response);
 		}
 	}
-	
+
 }
