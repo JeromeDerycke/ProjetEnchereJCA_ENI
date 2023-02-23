@@ -15,9 +15,18 @@
 	crossorigin="anonymous">
 
 <title>Créer un compte</title>
-</head>
-<body>
 
+<style>
+img {
+	display: block;
+	margin: 0 auto;
+}
+</style>
+
+</head>
+
+<body>
+	<img alt="logo" src="logo/venteencheres.png">
 	<div class="container">
 
 
@@ -55,7 +64,7 @@
 				<div class="col-12">
 					<label for="inputAddress" class="form-label">Nom de voie</label> <input
 						type="text" class="form-control" id="rue" name="Rue"
-						placeholder="campus eni">
+						placeholder="">
 				</div>
 				<div class="col-md-6">
 					<label for="inputCity" class="form-label"> ville</label> <input
