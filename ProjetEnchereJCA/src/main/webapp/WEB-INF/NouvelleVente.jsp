@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>Nouvelle Vente</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/NouvelleVente.css" />
+
 </head>
 <body>
 
@@ -49,7 +51,8 @@
 					class="form-control" id="categorie" name="categorie">
 					<option value="">--Choisissez une catégorie--</option>
 					<c:forEach items="${Categories}" var="categorie">
-						<option value=" ${categorie.noCategorie}">${categorie.noCategorie} - ${categorie.libelle} </option>
+						<option value=" ${categorie.noCategorie}">${categorie.noCategorie}
+							- ${categorie.libelle}</option>
 					</c:forEach>
 				</select>
 			</div>
@@ -61,10 +64,17 @@
 					Ville : <input name="ville" type="text" placeholder="Ville"><br>
 				</fieldset>
 			</form>
-			<button type="submit" class="btn btn-primary" name="bt"
-				value="valider" Action="/WEB-INF/Bienvenue.jsp">Enregistrer</button>
-			<button type="submit" class="btn btn-primary" name="bt"
-				value="annuler" Action="/WEB-INF/Bienvenue.jsp">Annuler</button>
+			<div class="row mt-3">
+				<div class="d-flex justify-content-between">
+					<form action="ServletAccueil">
+						<button type="submit" class="btn btn-primary me-3" name="bt"
+							value="annuler" Action="/WEB-INF/Bienvenue.jsp">Annuler</button>
+					</form>
+
+					<button type="submit" class="btn btn-primary  me-3" name="bt"
+						value="valider" Action="/WEB-INF/Bienvenue.jsp" disabled=true>Enregistrer</button>
+				</div>
+			</div>
 		</form>
 	</div>
 

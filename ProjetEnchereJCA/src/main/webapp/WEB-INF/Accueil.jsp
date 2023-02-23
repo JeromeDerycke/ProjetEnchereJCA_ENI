@@ -22,9 +22,8 @@
 
 <header>
 
-	<div class="px-3 py-2 text-bg-dark">
 		<img alt="logo" src="logo/venteencheres.png">
-		<div class="container">
+	
 			<div
 				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 				<a href="/"
@@ -40,8 +39,7 @@
 
 				</ul>
 			</div>
-		</div>
-	</div>
+
 	<div class="px-3 py-2 border-bottom mb-3">
 		<div class="container d-flex flex-wrap justify-content-center">
 			<form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto"
@@ -91,8 +89,8 @@
 								content is a little bit longer.</p>
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="btn-group">
-									<button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-									<button type="button" class="btn btn-sm btn-outline-secondary">Encherir</button>
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary me-3">Voir</button>
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary">Encherir</button>
 								</div>
 
 							</div>
@@ -114,8 +112,8 @@
 								content is a little bit longer.</p>
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="btn-group">
-									<button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-									<button type="button" class="btn btn-sm btn-outline-secondary">Encherir</button>
+									<button type="button" disabled=true class="btn btn-sm btn-outline-secondary me-3">Voir</button>
+									<button type="button" disabled=true class="btn btn-sm btn-outline-secondary">Encherir</button>
 								</div>
 
 							</div>

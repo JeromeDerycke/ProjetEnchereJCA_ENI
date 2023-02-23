@@ -1,5 +1,14 @@
 @charset "UTF-8";
 html,
+
+    .btn-primary:first-child {
+      margin-right: auto;
+    }
+
+    .btn-primary:last-child {
+      margin-left: auto;
+    }
+
 body {
   height: 100%;
 }

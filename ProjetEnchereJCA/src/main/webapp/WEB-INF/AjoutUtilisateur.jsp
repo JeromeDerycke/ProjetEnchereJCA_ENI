@@ -51,10 +51,9 @@ img {
 						type="text" class="form-control" id="prenom" name="Prenom">
 				</div>
 				<div class="col-md-6">
-					<label for="inputEmail4" class="form-label">Pseudo</label> <input
-						type="text" class="form-control" id="Pseudo" name="Pseudo"
-						pattern="[@]"
-						title="Le pseudo ne peut pas contenir le caractère @">
+					<label for="text" class="form-label">Pseudo</label> <input
+						type="text"  class="form-control"  id="Pseudo" name="Pseudo"
+						title="Le pseudo doit contenir des lettres ou des chiffres (pas de caracteres spéciaux)">
 
 				</div>
 				<div class="col-md-6">
@@ -74,12 +73,13 @@ img {
 					<label for="inputZip" class="form-label">CP</label> <input
 						type="text" class="form-control" id="CodePostal" name="CodePostal">
 				</div>
-				<div class="col">
-					<button class="btn btn-primary" type="submit" name="bt"
+				<div class="row mt-3">
+				<div class="d-flex justify-content-between">
+					<button class="btn btn-primary col-3 me-5" type="submit" name="bt"
 						value="annuler" action="/WEB-INF/Accueil">Annuler</button>
-					<button class="btn btn-primary" type="submit" name="bt"
+					<button class="btn btn-primary col-3 ms-5" type="submit" name="bt"
 						value="valider" action="/WEB-INF/Bienvenue">S'inscrire</button>
-				</div>
+				</div></div>
 			</form>
 		</div>
 	</div>

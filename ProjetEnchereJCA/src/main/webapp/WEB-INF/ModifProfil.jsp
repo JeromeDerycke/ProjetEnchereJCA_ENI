@@ -28,9 +28,9 @@
 				<div class="col-md-6">
 					<label for="inputEmail4" class="form-label">Pseudo</label> <input
 						type="text" class="form-control" id="Pseudo" name="Pseudo"
-						placeholder="${utilisateur.pseudo}"
-						aria-label="Disabled input example" pattern="[@]"
-						title="Le pseudo ne peut pas contenir le caractère @">
+						placeholder="${utilisateur.pseudo}" 
+						aria-label="Disabled input example" pattern="[a-z][A-z][0-9]"
+						title="Le pseudo doit contenir des lettres ou des chiffres (pas de caracteres spéciaux)">
 				</div>
 
 				<div class="col-md-6">
@@ -66,7 +66,7 @@
 						placeholder="${utilisateur.telephone}"
 						aria-label="Disabled input example">
 				</div>
-				<div class="col-12">
+				<div class="col-md-6">
 					<label for="inputAddress" class="form-label">Nom de voie</label> <input
 						type="text" class="form-control" id="rue" name="Rue"
 						placeholder="${utilisateur.rue}"
