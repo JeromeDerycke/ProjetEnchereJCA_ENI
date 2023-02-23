@@ -15,9 +15,18 @@
 	crossorigin="anonymous">
 
 <title>Créer un compte</title>
-</head>
-<body>
 
+<style>
+img {
+	display: block;
+	margin: 0 auto;
+}
+</style>
+
+</head>
+
+<body>
+	<img alt="logo" src="logo/venteencheres.png">
 	<div class="container">
 
 
@@ -43,7 +52,10 @@
 				</div>
 				<div class="col-md-6">
 					<label for="inputEmail4" class="form-label">Pseudo</label> <input
-						type="text" class="form-control" id="Pseudo" name="Pseudo">
+						type="text" class="form-control" id="Pseudo" name="Pseudo"
+						pattern="[@]"
+						title="Le pseudo ne peut pas contenir le caractère @">
+
 				</div>
 				<div class="col-md-6">
 					<label for="inputPassword4" class="form-label">telephone</label> <input
@@ -52,7 +64,7 @@
 				<div class="col-12">
 					<label for="inputAddress" class="form-label">Nom de voie</label> <input
 						type="text" class="form-control" id="rue" name="Rue"
-						placeholder="campus eni">
+						placeholder="">
 				</div>
 				<div class="col-md-6">
 					<label for="inputCity" class="form-label"> ville</label> <input
@@ -65,11 +77,11 @@
 				<div class="col">
 					<button class="btn btn-primary" type="submit" name="bt"
 						value="annuler" action="/WEB-INF/Accueil">Annuler</button>
-				<button class="btn btn-primary" type="submit" name="bt"
-					value="valider" action="/WEB-INF/Bienvenue">S'inscrire</button>
+					<button class="btn btn-primary" type="submit" name="bt"
+						value="valider" action="/WEB-INF/Bienvenue">S'inscrire</button>
+				</div>
+			</form>
 		</div>
-		</form>
-	</div>
 	</div>
 
 	<script

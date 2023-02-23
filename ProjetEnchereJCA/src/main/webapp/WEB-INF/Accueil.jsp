@@ -14,6 +14,7 @@
 	crossorigin="anonymous">
 
 <title>ENI-accueilEncheres</title>
+
 </head>
 
 
@@ -52,7 +53,8 @@
 			<div class=" d-flex no-wrap text-end">
 
 				<form action="ServletConnexion">
-					<button type="submit" class="btn btn-light text-dark me-3">Se connecter</button>
+					<button type="submit" class="btn btn-light text-dark me-3">Se
+						connecter</button>
 				</form>
 				<form action="ServletAjoutUtilisateur">
 					<button type="submit" class="btn btn-primary me-3">S'inscrire</button>
@@ -128,7 +130,9 @@
 
 <div class="container">
 	<footer class="py-3 my-4">
-		<p class="text-center text-muted">&copy; 2023 Encheres, <a href="https://eni-ecole.fr">ENI-Ecole</a></p>
+		<p class="text-center text-muted">
+			&copy; 2023 Encheres, <a href="https://eni-ecole.fr">ENI-Ecole</a>
+		</p>
 	</footer>
 </div>
 

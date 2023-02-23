@@ -29,7 +29,8 @@
 					<label for="inputEmail4" class="form-label">Pseudo</label> <input
 						type="text" class="form-control" id="Pseudo" name="Pseudo"
 						placeholder="${utilisateur.pseudo}"
-						aria-label="Disabled input example">
+						aria-label="Disabled input example" pattern="[@]"
+						title="Le pseudo ne peut pas contenir le caractère @">
 				</div>
 
 				<div class="col-md-6">
