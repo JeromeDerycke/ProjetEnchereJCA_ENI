@@ -46,60 +46,63 @@
 
 	<main class="form-signin w-100 m-auto">
 		<header>
-<img class="" src="logo/venteencheres.png" alt="" width="72"
-			height="57">
-			</header>
-			
-			<div class="album mt-5 px-5 py-5">
-		<form action="ServletConnexion" method="post" class="row">
-			<h1 class="h3 my-3 fw-normal">Veuillez vous connecter</h1>
+			<img class="" src="logo/venteencheres.png" alt="" width="72"
+				height="57">
+		</header>
+
+		<div class="album mt-5 px-5 py-5">
+			<form action="ServletConnexion" method="post" class="row">
+				<h1 class="h3 my-3 fw-normal">Veuillez vous connecter</h1>
 
 
-			<div class="form-floating">			
-				<input type="text" class="form-control" id="floatingInput"
-					placeholder="name@example.com" id="login" name="login"> <label
-					for="floatingInput"> Adresse e-mail / Pseudo</label>
-			</div>
-			<div class="form-floating mt-2">
-				<input type="password" class="form-control" id="floatingPassword"
-					placeholder="Password" id="mdp" name="mdp"> <label
-					for="floatingPassword">Mot de passe</label>
+				<div class="form-floating">
+					<input type="text" class="form-control" id="floatingInput"
+						placeholder="name@example.com" id="login" name="login"> <label
+						for="floatingInput"> Adresse e-mail / Pseudo</label>
+				</div>
+				<div class="form-floating mt-2">
+					<input type="password" class="form-control" id="floatingPassword"
+						placeholder="Password" id="mdp" name="mdp"> <label
+						for="floatingPassword">Mot de passe</label>
 					<c:if test="${not empty msgErreur}">
 						<p style="color: red">${msgErreur}</p>
 					</c:if>
-			</div>
+				</div>
 
-			<div class="checkbox mb-3">
-				<label> <input type="checkbox"
-					aria-label="Se souvenir de moi" id="souvenir" name="souvenir"
-					value="souv"> Se souvenir de moi
-				</label>
+				<div class="checkbox mb-3">
+					<label> <input type="checkbox"
+						aria-label="Se souvenir de moi" id="souvenir" name="souvenir"
+						value="souv"> Se souvenir de moi
+					</label>
+				</div>
+				<div class="d-flex justify-content-center">
+					<button class="btn btn-warning" type="submit">S'identifier</button>
+				</div>
+			</form>
+
+			<div class="row col mt-3 d-flex justify-content-center">
+				<form action="ServletAjoutUtilisateur">
+					<button type="submit" class=" btn btn-secondary">Créer un
+						compte</button>
+				</form>
 			</div>
-			<div class="row col-3 justify-content-center">
-			<button class="btn btn-warning" type="submit">S'identifier</button></div>
-		</form>
-		
-		<div class="row col mt-3 ">
-		<form action="ServletAjoutUtilisateur">
-			<button type="submit" class=" btn btn-secondary">Créer
-				un compte</button>
-		</form> </div> 
 		</div>
-<footer class="py-3 my-4">
-<div class="container">
-	
-		<p class="text-center text-muted">
-			&copy; Projet enchère Jérome & Clément & Alexandre - 2023 <a href="https://eni-ecole.fr">     ENI-Ecole</a>
-		</p>
-	</div>
-</footer>
+		<footer class="py-3 my-4">
+			<div class="container">
+
+				<p class="text-center text-muted">
+					&copy; Projet enchère Jérome & Clément & Alexandre - 2023 <a
+						href="https://eni-ecole.fr"> ENI-Ecole</a>
+				</p>
+			</div>
+		</footer>
 	</main>
-	
-	
 
 
 
-	
+
+
+
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
