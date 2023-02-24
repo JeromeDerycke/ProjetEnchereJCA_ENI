@@ -9,12 +9,16 @@
 <title>Nouvelle Vente</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/NouvelleVente.css" />
+
+<link rel="stylesheet" href="css/Style.css" />
 
 </head>
+<header>
+	<img alt="logo" src="logo/venteencheres.png">
+</header>
 <body>
 
-	<div class="container mt-4">
+	<div class="container mt-4"><div class="album  mt-5 px-5 py-5">
 		<h1 class="text-center mb-4">Nouvelle vente</h1>
 		<form>
 			<div class="form-group">
@@ -59,25 +63,35 @@
 			<form>
 				<fieldset>
 					<legend>Retrait :</legend>
-					Rue : <input name="rue" type="text" placeholder="Rue" /><br /> CP
-					: <input name="code postal" type="text" placeholder="Code postal" /><br>
+					Rue : <input name="rue" type="text" placeholder="Rue" /><br /> CP :    <input name="code postal" type="text" placeholder="Code postal" /><br>
 					Ville : <input name="ville" type="text" placeholder="Ville"><br>
 				</fieldset>
 			</form>
 			<div class="row mt-3">
 				<div class="d-flex justify-content-between">
-					<form action="ServletAccueil">
-						<button type="submit" class="btn btn-primary me-3" name="bt"
+					<div class="row"><form action="ServletAccueil">
+					
+						<button type="submit" class="btn btn-warning mx-5" name="bt"
 							value="annuler" Action="/WEB-INF/Bienvenue.jsp">Annuler</button>
-					</form>
-
-					<button type="submit" class="btn btn-primary  me-3" name="bt"
+					</form></div>
+					
+					<button type="submit" class="btn btn-secondary mx-5" name="bt"
 						value="valider" Action="/WEB-INF/Bienvenue.jsp" disabled=true>Enregistrer</button>
 				</div>
 			</div>
 		</form>
-	</div>
+	</div></div>
 
+<footer class="py-3 my-4">
+	<div class="container">
+
+		<p class="text-center text-muted">
+			&copy; Projet enchère Jérome & Clément & Alexandre - 2023 <a
+				href="https://eni-ecole.fr"> ENI-Ecole</a>
+		</p>
+
+	</div>
+</footer>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

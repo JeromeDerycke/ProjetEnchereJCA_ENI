@@ -13,17 +13,18 @@
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
 	<link rel="stylesheet" href="css/Style.css" />
-<title>ENI-accueilEncheres</title>
+<title>ENI - Troc & Encheres</title>
+
 </head>
 
 
-<div class="b-example-divider"></div>
+
 
 <header>
 
-	<div class="px-3 py-2 text-bg-dark">
 		<img alt="logo" src="logo/venteencheres.png">
-		<div class="container">
+		<h3>ENI - Troc & Enchères</h3>
+	
 			<div
 				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 				<a href="/"
@@ -39,26 +40,25 @@
 
 				</ul>
 			</div>
-		</div>
-	</div>
-	<div class="px-3 py-2 border-bottom mb-3">
+
+	<div class="px-3 py-2  ">
 		<div class="container d-flex flex-wrap justify-content-center">
 			<form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto"
 				role="search">
 				<input type="search" class="form-control" placeholder="Chercher..."
 					aria-label="search">
-	</form>
+			</form>
 
 			<div class=" d-flex no-wrap text-end">
 
 				<form action="ServletNouvelleVente">
-					<button type="submit" class="btn btn-primary me-3">Vendre un article</button>
+					<button type="submit" class="btn btn-warning me-3">Vendre un article</button>
 				</form>					
 				<form action="ServletProfil">
-					<button type="submit" class="btn btn-primary me-3">Mon profil</button>
+					<button type="submit" class="btn btn-warning me-3">Mon profil</button>
 				</form>
 				<form action="ServletDeconnexion">
-					<button type="submit" class="btn btn-light text-dark me-3">Se déconnecter</button>
+					<button type="submit" class="btn btn-secondary me-3">Se déconnecter</button>
 				</form>
 
 
@@ -67,15 +67,15 @@
 		</div>
 	</div>
 </header>
-
-<h3 align="center">Liste des encheres</h3>
-
+<div class="row mt-4">
+<h3 align="center">Liste des enchères</h3>
+</div>
 <main>
-	<div class="album py-5 bg-light">
+	<div class="album py-5">
 		<div class="container">
 
-			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-				<div class="col">
+			<div class="row d-flex no-wrap justify-content-center">
+				<div class="  col-sm-12 col-md-4  mx-4">
 					<div class="card shadow-sm">
 
 						<svg class="bd-placeholder-img card-img-top" width="100%"
@@ -89,17 +89,17 @@
 							<p class="card-text">This is a wider card with supporting
 								text below as a natural lead-in to additional content. This
 								content is a little bit longer.</p>
-							<div class="d-flex justify-content-between align-items-center">
-								<div class="btn-group">
-									<button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-									<button type="button" class="btn btn-sm btn-outline-secondary">Encherir</button>
+							<div class=" d-flex no-wrap ">
+								<div class="btn-group justify-content-center ">
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary me-4"> Visualiser</button>
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary ms-3">Encherir</button>
 								</div>
 
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class=" col-sm-12 col-md-4 mx-4">
 					<div class="card shadow-sm">
 						<svg class="bd-placeholder-img card-img-top" width="100%"
 							height="225" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -114,8 +114,8 @@
 								content is a little bit longer.</p>
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="btn-group">
-									<button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-									<button type="button" class="btn btn-sm btn-outline-secondary">Encherir</button>
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary me-4"> Visualiser</button>
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary ms-3">Encherir</button>
 								</div>
 
 							</div>
@@ -125,14 +125,16 @@
 </main>
 
 
-
+<footer class="py-3 my-4">
 <div class="b-example-divider"></div>
 
 <div class="container">
-	<footer class="py-3 my-4">
-		<p class="text-center text-muted">&copy; 2023 EncheresJCA, <a href="https://eni-ecole.fr">ENI-Ecole</a></p>
-	</footer>
-</div>
+	
+		<p class="text-center text-muted">
+			&copy; Projet enchère Jérome & Clément & Alexandre - 2023 <a href="https://eni-ecole.fr">     ENI-Ecole</a>
+		</p>
+	
+</div></footer>
 
 
 

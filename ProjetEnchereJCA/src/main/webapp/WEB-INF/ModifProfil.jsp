@@ -13,12 +13,16 @@
 	rel="stylesheet"
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
-
+<link rel="stylesheet" href="css/Style.css" />
 <title>Mon profil</title>
 </head>
-<body>
+</head>
+<header>
 	<img alt="logo" src="logo/venteencheres.png">
+</header>
+<body>
 	<div class="container">
+	<div class="album  mt-5 px-5 py-5">
 
 
 
@@ -28,7 +32,7 @@
 				<div class="col-md-6">
 					<label for="inputEmail4" class="form-label">Pseudo</label> <input
 						type="text" class="form-control" id="Pseudo" name="Pseudo"
-						placeholder="" required pattern="^[^@]+$"
+						placeholder="" 
 						aria-label="" value="${utilisateur.pseudo}" onFocus="(this.value ==${utilisateur.pseudo} ) this.value = ''"
 						title="Le pseudo doit contenir des lettres ou des chiffres (pas de caracteres spéciaux)">
 				</div>
@@ -83,7 +87,7 @@
 						type="text" class="form-control" id="CodePostal" name="CodePostal"
 						placeholder=""
 						aria-label=""value="${utilisateur.codePostal}" onFocus="(this.value ==${utilisateur.codePostal} ) this.value = ''">
-				</div><button class="btn btn-primary mt-3" type="submit" name="bt"
+				</div><button class="btn btn-secondary mt-3" type="submit" name="bt"
 					value="accueil">Enregistrer modification</button>
 					</form>
 		</div>
@@ -96,7 +100,7 @@
 			 
 			</div>
 			<form>
-				<button class="btn btn-primary" type="button"
+				<button class="btn btn-warning" type="button"
 					data-bs-toggle="collapse" data-bs-target=#affichersupr
 					aria-expanded="false" aria-controls="collapsesupr">
 					Supprimer mon compte</button>
@@ -113,12 +117,23 @@
 						name="mdpSupr" placeholder="Votre mot de passe">
 				
 			
-				<button class="btn btn-primary" type="submit" name="bt"
+				<button class="btn btn-warning" type="submit" name="bt"
 					value="accueil">Valider supression</button>
 			</form> 
 				
   </div>
 </div>
+</div></div>
+	<footer class="py-3 my-4">
+	<div class="container">
+
+		<p class="text-center text-muted">
+			&copy; Projet enchère Jérome & Clément & Alexandre - 2023 <a
+				href="https://eni-ecole.fr"> ENI-Ecole</a>
+		</p>
+
+	</div>
+</footer>
 
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

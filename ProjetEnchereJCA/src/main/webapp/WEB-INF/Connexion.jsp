@@ -35,14 +35,24 @@
 
 <!-- Custom styles for this template -->
 <link rel="stylesheet" href="css/sign-in.css" />
+<link rel="stylesheet" href="css/Style.css" />
+
+
 </head>
+
+
+
 <body class="text-center">
 
 	<main class="form-signin w-100 m-auto">
-		<img class="mb-4" src="logo/venteencheres.png" alt="" width="72"
+		<header>
+<img class="" src="logo/venteencheres.png" alt="" width="72"
 			height="57">
-		<form action="ServletConnexion" method="post" class="row g-3">
-			<h1 class="h3 mb-3 fw-normal">Veuillez vous connecter</h1>
+			</header>
+			
+			<div class="album mt-5 px-5 py-5">
+		<form action="ServletConnexion" method="post" class="row">
+			<h1 class="h3 my-3 fw-normal">Veuillez vous connecter</h1>
 
 
 			<div class="form-floating">			
@@ -50,7 +60,7 @@
 					placeholder="name@example.com" id="login" name="login"> <label
 					for="floatingInput"> Adresse e-mail / Pseudo</label>
 			</div>
-			<div class="form-floating">
+			<div class="form-floating mt-2">
 				<input type="password" class="form-control" id="floatingPassword"
 					placeholder="Password" id="mdp" name="mdp"> <label
 					for="floatingPassword">Mot de passe</label>
@@ -65,15 +75,31 @@
 					value="souv"> Se souvenir de moi
 				</label>
 			</div>
-			<button class="w-100 btn btn-lg btn-primary" type="submit">S'identifier</button>
+			<div class="row col">
+			<button class="btn btn-warning" type="submit">S'identifier</button></div>
 		</form>
+		
+		<div class="row col mt-3 ">
 		<form action="ServletAjoutUtilisateur">
-			<button type="submit" class="w-100 mt-3 btn btn-lg btn-primary">Créer
+			<button type="submit" class=" btn btn-secondary">Créer
 				un compte</button>
-		</form>
-		<p class="mt-5 mb-3 text-muted">&copy; ENI - 2023</p>
-
+		</form> </div> 
+		</div>
+<footer class="py-3 my-4">
+<div class="container">
+	
+		<p class="text-center text-muted">
+			&copy; Projet enchère Jérome & Clément & Alexandre - 2023 <a href="https://eni-ecole.fr">     ENI-Ecole</a>
+		</p>
+	</div>
+</footer>
 	</main>
+	
+	
+
+
+
+	
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
