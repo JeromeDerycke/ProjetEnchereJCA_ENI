@@ -43,7 +43,7 @@
 				<div class="col-md-6">
 					<label for="inputPassword4" class="form-label">Mot de passe</label>
 					<input type="Password" class="form-control" id="inputPassword4"
-						name="MotDePasse" placeholder="${utilisateur.motDePasse}"
+						name="MotDePasse" placeholder="" value="${utilisateur.motDePasse}"
 						aria-label="Disabled input example" disabled>
 				</div>
 				<div class="col-md-6">

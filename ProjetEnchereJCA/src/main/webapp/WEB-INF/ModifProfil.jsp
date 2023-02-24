@@ -28,61 +28,61 @@
 				<div class="col-md-6">
 					<label for="inputEmail4" class="form-label">Pseudo</label> <input
 						type="text" class="form-control" id="Pseudo" name="Pseudo"
-						placeholder="${utilisateur.pseudo}" 
-						aria-label="Disabled input example"
+						placeholder="" required pattern="^[^@]+$"
+						aria-label="" value="${utilisateur.pseudo}" onFocus="(this.value ==${utilisateur.pseudo} ) this.value = ''"
 						title="Le pseudo doit contenir des lettres ou des chiffres (pas de caracteres spéciaux)">
 				</div>
 
 				<div class="col-md-6">
 					<label for="inputEmail4" class="form-label">Email</label> <input
 						type="email" class="form-control" id="inputEmail4" name="Email"
-						placeholder=" ${utilisateur.email} "
-						aria-label="Disabled input example">
+						placeholder=""
+						aria-label="" value=" ${utilisateur.email} " onFocus="(this.value ==${utilisateur.email} ) this.value = ''">
 
 
 				</div>
 				<div class="col-md-6">
 					<label for="inputPassword4" class="form-label">Mot de passe</label>
 					<input type="Password" class="form-control" id="inputPassword4"
-						name="MotDePasse" placeholder="${utilisateur.motDePasse}"
-						aria-label="Disabled input example">
+						name="MotDePasse" placeholder=""
+						aria-label="" value="${utilisateur.motDePasse}" onFocus="if (this.value == ${utilisateur.motDePasse}) this.value = ''">
 				</div>
 				<div class="col-md-6">
 					<label for="inputEmail4" class="form-label">Nom</label> <input
 						type="text" class="form-control" id="nom" name="Nom"
-						placeholder="${utilisateur.nom}"
-						aria-label="Disabled input example">
+						placeholder=""
+						aria-label="" value="${utilisateur.nom}" onFocus="(this.value ==${utilisateur.nom} ) this.value = ''">
 				</div>
 				<div class="col-md-6">
 					<label for="inputPassword4" class="form-label">Prenom</label> <input
 						type="text" class="form-control" id="prenom" name="Prenom"
-						placeholder="${utilisateur.prenom}"
-						aria-label="Disabled input example">
+						placeholder="" 
+						aria-label="" value="${utilisateur.prenom}" onFocus="(this.value ==${utilisateur.prenom}) this.value = ''">
 				</div>
 
 				<div class="col-md-6">
 					<label for="inputPassword4" class="form-label">telephone</label> <input
 						type="text" class="form-control" id="telephone" name="Telephone"
-						placeholder="${utilisateur.telephone}"
-						aria-label="Disabled input example">
+						placeholder=""
+						aria-label="" value="${utilisateur.telephone}" onFocus="(this.value ==${utilisateur.telephone}) this.value = ''">
 				</div>
 				<div class="col-md-6">
 					<label for="inputAddress" class="form-label">Nom de voie</label> <input
 						type="text" class="form-control" id="rue" name="Rue"
-						placeholder="${utilisateur.rue}"
-						aria-label="Disabled input example">
+						placeholder=""
+						aria-label="" value="${utilisateur.rue}" onFocus="(this.value ==${utilisateur.rue}) this.value = ''">
 				</div>
 				<div class="col-md-6">
 					<label for="inputCity" class="form-label"> ville</label> <input
 						type="text" class="form-control" id="Ville" name="Ville"
-						placeholder="${utilisateur.ville}"
-						aria-label="Disabled input example">
+						placeholder=""
+						aria-label="" value="${utilisateur.ville}" onFocus="(this.value ==${utilisateur.ville}) this.value = ''">
 				</div>
 				<div class="col-md-6">
 					<label for="inputZip" class="form-label">CP</label> <input
 						type="text" class="form-control" id="CodePostal" name="CodePostal"
-						placeholder="${utilisateur.codePostal}"
-						aria-label="Disabled input example">
+						placeholder=""
+						aria-label=""value="${utilisateur.codePostal}" onFocus="(this.value ==${utilisateur.codePostal} ) this.value = ''">
 				</div><button class="btn btn-primary mt-3" type="submit" name="bt"
 					value="accueil">Enregistrer modification</button>
 					</form>

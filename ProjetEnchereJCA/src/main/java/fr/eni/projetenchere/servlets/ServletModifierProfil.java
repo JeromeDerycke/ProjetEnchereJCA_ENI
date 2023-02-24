@@ -64,7 +64,9 @@ public class ServletModifierProfil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = null;
-		
+		request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        
 		String email = request.getParameter("Email");
 		String mdp = request.getParameter("MotDePasse");
 		String nom = request.getParameter("Nom");
