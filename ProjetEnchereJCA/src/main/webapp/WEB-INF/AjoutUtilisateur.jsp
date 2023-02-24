@@ -78,7 +78,7 @@ img {
 					<button class="btn btn-primary col-3 me-5" type="submit" name="bt"
 						value="annuler" action="/WEB-INF/Accueil">Annuler</button>
 					<button class="btn btn-primary col-3 ms-5" type="submit" name="bt"
-						value="valider" action="/WEB-INF/Bienvenue">S'inscrire</button>
+						value="valider" action="/WEB-INF/Connexion.jsp">S'inscrire</button>
 				</div></div>
 			</form>
 		</div>

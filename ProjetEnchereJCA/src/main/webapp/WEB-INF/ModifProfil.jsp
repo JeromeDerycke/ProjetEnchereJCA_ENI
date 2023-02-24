@@ -29,7 +29,7 @@
 					<label for="inputEmail4" class="form-label">Pseudo</label> <input
 						type="text" class="form-control" id="Pseudo" name="Pseudo"
 						placeholder="${utilisateur.pseudo}" 
-						aria-label="Disabled input example" pattern="[a-z][A-z][0-9]"
+						aria-label="Disabled input example"
 						title="Le pseudo doit contenir des lettres ou des chiffres (pas de caracteres spéciaux)">
 				</div>
 

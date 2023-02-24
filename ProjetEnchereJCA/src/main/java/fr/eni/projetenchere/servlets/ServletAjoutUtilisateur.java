@@ -74,7 +74,7 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 			request.setAttribute("retour", "Insertion reussi");
 			request.setAttribute("utilisateur", u);
 
-			rd = request.getRequestDispatcher("/WEB-INF/Bienvenue.jsp");
+			rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
 			rd.forward(request, response);
 
 //			} catch (BLLException e){
