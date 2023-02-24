@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+h3
+ {
+  
+  color: black;
+}
+
+
+h3:hover {
+  
+  color: red;
+}
+
+#bandeau {
+  height: 100%;
+  width: 40px;
+  background-color: black;
+  position:fixed;
+  left: 0;
+  top: 0;
+  
+}
