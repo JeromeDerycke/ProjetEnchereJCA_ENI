@@ -12,8 +12,12 @@
 	rel="stylesheet"
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
+	<link rel="stylesheet" href="css/Style.css" />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Open+Sans:wght@300&display=swap');
+	  </style>
 
-<title>ENI-accueilEncheres</title>
+<title>ENI - Troc & Encheres</title>
 
 </head>
 
@@ -23,6 +27,7 @@
 <header>
 
 		<img alt="logo" src="logo/venteencheres.png">
+		<h3>ENI - Troc & Encheres</h3>
 	
 			<div
 				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -48,32 +53,32 @@
 					aria-label="search">
 			</form>
 
-			<div class=" d-flex no-wrap text-end">
+			
 
 				<form action="ServletConnexion">
-					<button type="submit" class="btn btn-light text-dark me-3">Se
+					<button type="submit" class="btn btn-secondary me-3">Se
 						connecter</button>
 				</form>
 				<form action="ServletAjoutUtilisateur">
-					<button type="submit" class="btn btn-primary me-3">S'inscrire</button>
+					<button type="submit" class="btn btn-warning text-light me-3 ">S'inscrire</button>
 				</form>
 
 
 
 
-			</div>
+			
 		</div>
 	</div>
 </header>
-
-<h3 align="center">Liste des encheres</h3>
-
+<div class="row mt-4">
+<h3 align="center" >Liste des encheres</h3>
+</div>
 <main>
-	<div class="album py-5 bg-light">
+	<div class="album py-5">
 		<div class="container">
 
-			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-				<div class="col">
+			<div class="row d-flex no-wrap justify-content-center">
+				<div class="  col-sm-12 col-md-4  mx-4">
 					<div class="card shadow-sm">
 
 						<svg class="bd-placeholder-img card-img-top" width="100%"
@@ -87,17 +92,17 @@
 							<p class="card-text">This is a wider card with supporting
 								text below as a natural lead-in to additional content. This
 								content is a little bit longer.</p>
-							<div class="d-flex justify-content-between align-items-center">
-								<div class="btn-group">
-									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary me-3">Voir</button>
-									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary">Encherir</button>
+							<div class=" d-flex no-wrap ">
+								<div class="btn-group justify-content-center ">
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary me-4"> Visualiser</button>
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary ms-3">Encherir</button>
 								</div>
 
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class=" col-sm-12 col-md-4 mx-4">
 					<div class="card shadow-sm">
 						<svg class="bd-placeholder-img card-img-top" width="100%"
 							height="225" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -112,8 +117,8 @@
 								content is a little bit longer.</p>
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="btn-group">
-									<button type="button" disabled=true class="btn btn-sm btn-outline-secondary me-3">Voir</button>
-									<button type="button" disabled=true class="btn btn-sm btn-outline-secondary">Encherir</button>
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary me-4"> Visualiser</button>
+									<button type="button" disabled="true" class="btn btn-sm btn-outline-secondary ms-3">Encherir</button>
 								</div>
 
 							</div>
@@ -123,16 +128,16 @@
 </main>
 
 
-
+<footer class="py-3 my-4">
 <div class="b-example-divider"></div>
 
 <div class="container">
-	<footer class="py-3 my-4">
+	
 		<p class="text-center text-muted">
 			&copy; 2023 Encheres, <a href="https://eni-ecole.fr">ENI-Ecole</a>
 		</p>
-	</footer>
-</div>
+	
+</div></footer>
 
 
 
