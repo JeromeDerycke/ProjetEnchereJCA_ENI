@@ -78,9 +78,9 @@ img {
 					</div>
 					<div class="row mt-3">
 						<div class="d-flex justify-content-between">
-							<button class="btn btn-primary col-3 me-5" type="submit"
+							<button class="btn btn-secondary col-3 me-5" type="submit"
 								name="bt" value="annuler" action="/WEB-INF/Accueil">Annuler</button>
-							<button class="btn btn-primary col-3 ms-5" type="submit"
+							<button class="btn btn-warning col-3 ms-5" type="submit"
 								name="bt" value="valider" action="/WEB-INF/Connexion.jsp">S'inscrire</button>
 						</div>
 					</div>

@@ -75,7 +75,7 @@
 					value="souv"> Se souvenir de moi
 				</label>
 			</div>
-			<div class="row col">
+			<div class="row col-3 justify-content-center">
 			<button class="btn btn-warning" type="submit">S'identifier</button></div>
 		</form>
 		

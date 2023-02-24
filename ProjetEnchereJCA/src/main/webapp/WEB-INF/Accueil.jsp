@@ -56,14 +56,14 @@
 			</form>
 
 
-
+			<form action="ServletAjoutUtilisateur">
+				<button type="submit" class="btn btn-warning text-light me-3 ">S'inscrire</button>
+			</form>
 			<form action="ServletConnexion">
 				<button type="submit" class="btn btn-secondary me-3">Se
 					connecter</button>
 			</form>
-			<form action="ServletAjoutUtilisateur">
-				<button type="submit" class="btn btn-warning text-light me-3 ">S'inscrire</button>
-			</form>
+
 
 
 
