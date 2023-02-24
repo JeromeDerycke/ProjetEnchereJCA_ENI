@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-/* font */
+ @font-face {
 font-family: 'Manrope', sans-serif;
 font-family: 'Open Sans', sans-serif;
-
+ }
 
 /* Body styles */
 body {
